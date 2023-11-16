@@ -1,0 +1,23 @@
+body {
+  background-color: #E1D4C9;
+}
+
+.text-dark {
+  color: #403F3D;
+}
+
+.text-light {
+  color: #E1D4C9;
+}
+
+.text-accent {
+  color: #B0907A;
+}
+
+.container {
+  background-color: #665F55;
+}
+
+.backdrop {
+  background-color: rgba(64, 63, 61, 0.80);
+}
