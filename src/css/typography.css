@@ -13,3 +13,21 @@ h1 {
 h1.text-accent {
   font-style: italic;
 }
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.link-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}

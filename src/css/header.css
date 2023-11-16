@@ -1,0 +1,11 @@
+.logo {
+  background-image: url("../assets/svg/logo.svg");
+  width: 100px;
+  height: 60px;
+}
+
+.header-menu-icon {
+  background-image: url("../assets/svg/coffee-cup.svg");
+  width: 20px;
+  height: 20px;
+}

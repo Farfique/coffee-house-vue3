@@ -6,24 +6,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/typography.css">
   <title>Coffee-shop Home</title>
 </head>
 
 <body>
-  <header class="main-header">
-    <div class="logo"></div>
-    <nav class="navigation">
-      <div class="nav-container">
-        <ul class="nav-container-ul">
-          <li class="menu-item">Favorite coffee</li>
-          <li class="menu-item">About</li>
-          <li class="menu-item">Mobile app</li>
-          <li class="menu-item">Contact us</li>
-        </ul>
+  <div class="all-content">
+    <header class="main-header">
+      <div class="logo"></div>
+      <nav class="navigation">
+        <div class="nav-container">
+          <ul class="nav-container-ul link-text">
+            <li class="menu-item">Favorite coffee</li>
+            <li class="menu-item">About</li>
+            <li class="menu-item">Mobile app</li>
+            <li class="menu-item">Contact us</li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header-menu-container">
+        <div class="header-menu link-text">Menu</div>
+        <div class="header-menu-icon"></div>
       </div>
-    </nav>
-    <div class="menu"></div>
-  </header>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title"><span class="text-accent">Enjoy</span> <span class="text-light">premium coffee at our
+              charming cafe</span></h1>
+          <div class="hero-text">
+            <p class="text-light">With its inviting atmosphere and delicious coffee options, the Coffee House Resource
+              is
+              a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their
+              favorite
+              beverage.
+            </p>
+          </div>
+          <a href="#" class="hero-main-link background-light link-text text-dark">Menu</a>
+        </div>
+      </section>
+      <section id="favorite-coffee" class="favorite-coffee">
+        <h2>Choose your <span class="text-accent">favorite</span> coffee</h2>
+        <div class="favorite-coffee-slider-container">
+          <div class="coffee-slider-main">
+            <div class="coffee-slider-back-btn"></div>
+            <div class="coffee-slider-content">
+              <img class="coffee-slider-img">
+              <h3>S’mores Frappuccino</h3>
+              <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with
+                oat milk.</p>
+              <h3 class="coffee-slider-price">$5.50</h3>
+            </div>
+            <div class="coffee-slider-next-btn"></div>
+          </div>
+          <div class="coffee-slider-bar"></div>
+        </div>
+      </section>
+      <section id="about" class="about"></section>
+      <section id="mobile-app" class="mobile-app"></section>
+    </main>
+    <footer>
+      <div class="socials"></div>
+      <div class="contacts" id="contacts"></div>
+    </footer>
+  </div>
+
 </body>
 
 </html>

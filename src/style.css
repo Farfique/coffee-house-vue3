@@ -1,9 +1,20 @@
-body {
-  background-color: #E1D4C9;
+* {
+  box-sizing: border-box;
 }
 
-.text-dark {
+body {
+  background-color: #E1D4C9;
   color: #403F3D;
+}
+
+p, h1 {
+  margin: 0;
+}
+
+.all-content {
+  width: 1440px;
+  margin: 0 auto 0 auto;
+  width: 1440px;
 }
 
 .text-light {
@@ -12,6 +23,14 @@ body {
 
 .text-accent {
   color: #B0907A;
+}
+
+.text-dark {
+  color: #403F3D;
+}
+
+.background-light {
+  background-color: #E1D4C9;
 }
 
 .container {
