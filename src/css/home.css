@@ -3,6 +3,8 @@
   width: 1360px;
   padding-bottom: 100px;
   padding-top: 100px;
+  border-radius: 40px;
+  margin-bottom: 100px;
 }
 
 .hero-content {
@@ -23,4 +25,95 @@
   gap: 8px;
   border-radius: 100px;
   text-decoration: none;
+}
+
+/* Favorite coffee section */
+.favorite-coffee {
+  margin-bottom: 100px;
+}
+
+.favorite-coffee-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.favorite-coffee-slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.coffee-slider-main {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.coffee-slider-back-btn, .coffee-slider-next-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border-style: solid;
+  border-width: 1px;
+  background-size: 24px 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.coffee-slider-content {
+  width: 480px
+}
+
+.coffee-slider-img {
+  background-image: url("../assets/img/coffees/frappuccino.png");
+  background-size: contain;
+  width: 480px;
+  height: 480px;
+  margin-bottom: 20px;
+}
+
+.coffee-slider-title{
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.coffee-slider-description {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.coffee-slider-price {
+  text-align: center;
+}
+
+.arrow-left {
+  background-image: url("../assets/svg/arrow-left.svg");
+}
+
+.arrow-right {
+  background-image: url("../assets/svg/arrow-right.svg");
+}
+
+.coffee-slider-bar {
+  height: 4px;
+}
+
+.coffee-slider-counter{
+  list-style-type: none;
+  display: flex;
+  gap: 12px;
+  padding: 0;
+}
+
+.coffee-slider-item {
+  height: 4px;
+  width: 40px;
+  background-color: #C1B6AD;
+  border-radius: 100px;
+}
+
+.coffee-slider-active {
+  background-color: #665F55;
 }

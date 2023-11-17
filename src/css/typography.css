@@ -10,10 +10,15 @@ h1 {
   line-height: 105%;
 }
 
-h1.text-accent {
+.text-accent {
   font-style: italic;
 }
 
+h2 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 105%;
+}
 h3 {
   font-size: 24px;
   font-weight: 600;

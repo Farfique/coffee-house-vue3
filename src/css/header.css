@@ -1,3 +1,10 @@
+header {
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right:auto;
+  width: 1360px;
+}
+
 .logo {
   background-image: url("../assets/svg/logo.svg");
   width: 100px;
@@ -6,6 +13,31 @@
 
 .header-menu-icon {
   background-image: url("../assets/svg/coffee-cup.svg");
+  background-repeat: no-repeat;
   width: 20px;
-  height: 20px;
+  height: 24px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  width: 1360px;
+}
+
+.nav-container-ul {
+  display: flex;
+  justify-content: left;
+  gap: 40px;
+  align-items: center;
+  list-style-type: none;
+}
+
+.header-menu-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 72px;
+  gap: 8px;
+  align-items: center;
+  justify-content: left;
 }
