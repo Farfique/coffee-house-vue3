@@ -117,3 +117,167 @@
 .coffee-slider-active {
   background-color: #665F55;
 }
+
+/* section about */
+.about {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.about-box {
+ width: 660px;
+}
+
+.about-box-big {
+ height: 590px;
+}
+
+.about-box-small {
+  height: 430px;
+}
+
+.about-image {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 20px;
+}
+
+/* mobile app section */
+.mobile-app {
+  margin-bottom: 100px;
+}
+
+.mobile-app-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-app-content {
+  width: 630px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.mobile-app-content-text {
+  margin: 0;
+}
+
+.mobile-app-content-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.store-button {
+  width: 200px;
+  height: 64px;
+  display: flex;
+  padding: 12px 20px 12px 20px;
+  justify-content: flex-start;
+  gap: 8px;
+
+  border: 1px solid #665F55;
+  border-radius: 100px;
+}
+
+.store-icon {
+  width: 36px;
+  height: 36px;
+ }
+
+ .mobile-app-picture {
+  width: 630px;
+  height: auto;
+ }
+
+ /* footer section */
+
+ .footer {
+  background-color: #665F55;
+  border-radius: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+  align-items: center;
+  margin-bottom: 40px;
+ }
+
+ .socials {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 470px;
+ }
+
+ .footer-social-icons-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+ }
+
+ .socials-button{
+  width: 60px;
+  height: 60px;
+  border: 1px solid #C1B6AD;
+  border-radius: 100%;
+ }
+
+ .social-svg {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 17px;
+  left: 17px;
+ }
+
+ .social-svg-path {
+  stroke: #C1B6AD;
+ }
+
+ .contacts {
+  width: 530px;
+ }
+
+ .contacts-title {
+  margin-bottom: 40px;
+ }
+
+ .contacts-icon {
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 28px;
+  margin-bottom: 16px;
+ }
+
+ .contacts-address {
+  background-image: url(../assets/svg/pin-alt.svg);
+ }
+
+ .contacts-telephone {
+  background-image: url(../assets/svg/phone.svg);
+ }
+
+ .contacts-work-hours {
+background-image: url(../assets/svg/clock.svg);
+ }

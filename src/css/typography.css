@@ -25,7 +25,10 @@ h3 {
   line-height: 125%;
 }
 
-p {
+  p, 
+  .contacts-address, 
+  .contacts-telephone, 
+  .contacts-work-hours {
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -35,4 +38,10 @@ p {
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
+}
+
+.caption-text {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 140%;
 }
