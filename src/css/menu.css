@@ -1,0 +1,80 @@
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.menu-container-title {
+  width: 800px;
+  text-align: center;
+}
+
+.menu-selection {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  list-style-type: none;
+  margin: 0;
+}
+
+.menu-selection-link {
+    padding: 8px 16px 8px 8px;
+    border-radius: 100px;
+    border: 1px solid #C1B6AD;
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: center;
+}
+
+.coffee-selection-link {
+
+}
+
+.tea-selection-link {
+
+}
+
+.dessert-selection-link {
+
+}
+
+.selected {
+  background-color: #665F55;
+}
+
+.selected .menu-icon {
+  background-color: #E1D4C9;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #C1B6AD;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+.coffee-menu-icon {
+  background-image: url("../assets/img/menu-icons/coffee-icon.png");
+}
+
+.tea-menu-icon {
+  background-image: url("../assets/img/menu-icons/tea-icon.png");
+}
+
+.dessert-menu-icon {
+  background-image: url("../assets/img/menu-icons/dessert-icon.png");
+}
+
+.coffee-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style-type: none;
+}

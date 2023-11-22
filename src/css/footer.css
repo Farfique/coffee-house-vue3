@@ -1,0 +1,71 @@
+/* footer section */
+
+.footer {
+  background-color: #665F55;
+  border-radius: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 470px;
+}
+
+.footer-social-icons-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.socials-button {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #C1B6AD;
+  border-radius: 100%;
+}
+
+.social-svg {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 17px;
+  left: 17px;
+}
+
+.social-svg-path {
+  stroke: #C1B6AD;
+}
+
+.contacts {
+  width: 530px;
+}
+
+.contacts-title {
+  margin-bottom: 40px;
+}
+
+.contacts-icon {
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 28px;
+  margin-bottom: 16px;
+}
+
+.contacts-address {
+  background-image: url(../assets/svg/pin-alt.svg);
+}
+
+.contacts-telephone {
+  background-image: url(../assets/svg/phone.svg);
+}
+
+.contacts-work-hours {
+  background-image: url(../assets/svg/clock.svg);
+}
