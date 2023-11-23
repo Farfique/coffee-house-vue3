@@ -77,4 +77,5 @@
   justify-content: center;
   gap: 40px;
   list-style-type: none;
+  flex-wrap: wrap;
 }

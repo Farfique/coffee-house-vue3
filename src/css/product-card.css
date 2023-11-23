@@ -24,20 +24,16 @@
 .product-card-content {
   padding: 20px;
 
-  /*display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 12px;*/
-}
-
-.product-card-title {
-  margin-bottom: 12px;
+  gap: 0px;
 }
 
 .product-card-description {
   margin-bottom: 12px;
+  height: 72px;
 }
 
-.product-card-price {}
 
