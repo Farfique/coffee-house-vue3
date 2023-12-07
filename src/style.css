@@ -39,3 +39,10 @@ h1, h2, h3 {
 .backdrop {
   background-color: rgba(64, 63, 61, 0.80);
 }
+
+@media (max-width: 1439px) {
+  .all-content {
+      width: 100%;
+      padding: 0 40px 0 40px;
+    }
+}

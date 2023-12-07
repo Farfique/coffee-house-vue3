@@ -69,3 +69,16 @@
 .contacts-work-hours {
   background-image: url(../assets/svg/clock.svg);
 }
+
+@media (max-width: 1439px){
+  .footer {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 100px 60px 100px 60px;
+      gap: 100px;
+    }
+
+    .socials {
+      width: 100%;
+    }
+}

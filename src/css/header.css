@@ -2,7 +2,7 @@ header {
   margin-bottom: 20px;
   margin-left: auto;
   margin-right:auto;
-  width: 1360px;
+  width: 100%;
 }
 
 .logo {
@@ -21,7 +21,12 @@ header {
 .main-header {
   display: flex;
   justify-content: space-between;
-  width: 1360px;
+  width: 100%;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
 }
 
 .nav-container-ul {
@@ -30,9 +35,13 @@ header {
   gap: 40px;
   align-items: center;
   list-style-type: none;
+  padding-inline-start: 0px;
+  margin-block-start: 0px;
+    margin-block-end: 0px;
 }
 
-.header-menu-container {
+.header-menu-container,
+.header-menu-container-inside {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -40,4 +49,89 @@ header {
   gap: 8px;
   align-items: center;
   justify-content: left;
+}
+
+#menu__toggle,
+#menu-btn {
+  display: none;
+}
+
+@media (max-width: 1439px){
+
+  .navigation, .header-menu-container {
+    position: absolute;
+    visibility: hidden;
+    background-color: #E1D4C9;
+    width: 100%;
+  }
+
+.navigation{
+  display: block;
+  top: -350px;
+  left: 0px;
+  padding-top: 40px;
+  transition: 0.3s;
+}
+
+.header-menu-container {
+  top: -60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  transition: 0.3s;
+}
+
+#menu__toggle {
+  display: block;
+  height: 0px;
+  opacity: 0;
+}
+
+#menu-btn {
+  display: block;
+  width: 44px;
+  height: 44px;
+  background-image: url("../assets/svg/menu-burger.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 2;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+
+#menu__toggle:checked~#menu-btn {
+  background-image: url("../assets/svg/menu-close.svg");
+  background-position: center center;
+}
+
+
+#menu__toggle:checked~.navigation {
+    visibility: visible;
+    left: 0;
+    top: 70px;
+    transition: 0.5s;
+  }
+#menu__toggle:checked~.header-menu-container {
+  visibility: visible;
+  left: 0;
+  top: 360px;
+  transition: 0.5s;
+}
+
+.nav-container-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding-bottom: 60px;
+  align-items: center;
+  list-style-type: none;
+}
+
+.header-menu-container-inside {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 }

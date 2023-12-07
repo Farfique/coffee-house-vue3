@@ -1,6 +1,6 @@
 .hero {
   background-image: url("../assets/img/hero-bgr.jpeg");
-  width: 1360px;
+  width: 100%;
   padding-bottom: 100px;
   padding-top: 100px;
   border-radius: 40px;
@@ -25,6 +25,10 @@
   gap: 8px;
   border-radius: 100px;
   text-decoration: none;
+}
+
+.hero-text-p {
+  margin: 0;
 }
 
 /* Favorite coffee section */
@@ -208,4 +212,60 @@
  .mobile-app-picture {
   width: 630px;
   height: auto;
+ }
+
+
+ @media (max-width: 1439px) {
+  .hero {
+    background-position: center center;
+  }
+
+  .hero-content {
+    margin-left: 60px;
+  }
+
+    .about-container {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: 40px
+    }
+  
+    .about-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 40px;
+    }
+  
+    .about-box {
+      width: 100%;
+      height: auto;
+    }
+  
+    .about-box-small {
+     display: none;
+    }
+
+    /* mobile app section */
+    .mobile-app {
+      margin-bottom: 100px;
+    }
+
+    .mobile-app-container {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .mobile-app-content {
+      width: 100%;
+    }
+    .mobile-app-picture {
+      width: 100%;
+      height: auto;
+    }
+
+        
  }
