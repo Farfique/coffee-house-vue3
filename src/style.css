@@ -49,6 +49,8 @@ ul {
   background-color: rgba(64, 63, 61, 0.80);
 }
 
-@media (max-width: 1439px) {
-  
+@media (max-width: 767px) {
+  .all-content {
+      padding: 0 16px 0 16px;
+    }
 }
