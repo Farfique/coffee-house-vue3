@@ -8,7 +8,7 @@
 }
 
 .menu-container-title {
-  width: 800px;
+  max-width: 800px;
   text-align: center;
 }
 
@@ -72,10 +72,19 @@
   background-image: url("../assets/img/menu-icons/dessert-icon.png");
 }
 
-.coffee-cards-container {
+.cards-container {
   display: flex;
   justify-content: center;
   gap: 40px;
   list-style-type: none;
   flex-wrap: wrap;
 }
+
+ @media (max-width: 1439px) {
+
+.cards-container li:nth-child(n + 5){
+  display: none;
+}
+
+
+ }
