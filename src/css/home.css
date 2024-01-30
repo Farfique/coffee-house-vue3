@@ -194,13 +194,17 @@
   display: flex;
   justify-content: flex-start;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .store-button {
   width: 200px;
   height: 64px;
   display: flex;
-  padding: 12px 20px 12px 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px; 
+  padding-right: 20px;
   justify-content: flex-start;
   gap: 8px;
 
@@ -211,6 +215,10 @@
 .store-icon {
   width: 36px;
   height: 36px;
+ }
+
+ .store-button-text-container{
+  min-width: 116px;
  }
 
  .mobile-app-picture {
@@ -244,7 +252,7 @@
 
   .about-box {
     width: 100%;
-    height: auto;
+    height: 590px;
   }
 
   .about-box-small {
@@ -296,4 +304,8 @@
       width: 100%;
       height: auto;
     }
+
+  .mobile-app-container {
+    gap: 40px;
+  }
  }
