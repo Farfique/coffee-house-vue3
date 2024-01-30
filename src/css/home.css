@@ -71,11 +71,15 @@
 }
 
 .coffee-slider-img {
-  background-image: url("../assets/img/coffees/frappuccino.png");
-  background-size: contain;
+
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.coffee-slider-img-img{
   width: 480px;
   height: 480px;
-  margin-bottom: 20px;
 }
 
 .coffee-slider-title{
@@ -280,5 +284,16 @@
       margin-left: 0px;
       padding-left: 16px;
       padding-right: 16px;
+    }
+  .coffee-slider-back-btn,
+  .coffee-slider-next-btn {
+      display: none;
+    }
+  .coffee-slider-content {
+    width: 100%;
+  }
+    .coffee-slider-img-img {
+      width: 100%;
+      height: auto;
     }
  }
