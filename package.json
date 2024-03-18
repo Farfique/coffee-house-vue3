@@ -1,0 +1,27 @@
+{
+  "name": "coffee-shop",
+  "version": "1.0.0",
+  "description": "coffee-shop app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Farfique/coffee-house.git"
+  },
+  "keywords": [
+    "rsschool",
+    "js"
+  ],
+  "author": "Farfique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Farfique/coffee-house/issues"
+  },
+  "homepage": "https://github.com/Farfique/coffee-house#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^5.90.3"
+  }
+}

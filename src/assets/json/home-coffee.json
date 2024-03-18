@@ -1,0 +1,20 @@
+[
+  {
+    "title": "S’mores Frappuccino",
+    "description": "This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.",
+    "price": "$5.50",
+    "imgUrl": "./assets/img/coffees/frappuccino.png"
+  },
+  {
+    "title": "Ice coffee",
+    "description": "Cappuccino with soft thick foam in summer version with ice",
+    "price": "$5.00",
+    "imgUrl": "./assets/img/coffees/ice-coffee.png"
+  },
+  {
+    "title": "Macchiatto",
+    "description": "Espresso with frothed milk and chocolate",
+    "price": "$5.50",
+    "imgUrl": "./assets/img/coffees/macchiatto.png"
+  }
+]
