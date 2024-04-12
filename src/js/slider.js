@@ -1,36 +1,52 @@
-function Slider() {
+export default class Slider {
+    constructor(){
+      this.sliderContainer = document.querySelector('.favorite-coffee-slider-container');
+      this.arrowLeft = this.sliderContainer.querySelector('.arrow-left');
+      this.arrowRight= this.sliderContainer.querySelector('.arrow-right');
+      this.pictureCoffee = this.sliderContainer.querySelector('.coffee-slider-img-img');
+      this.titleCoffee = this.sliderContainer.querySelector('.coffee-slider-title');
+      this.descriptionCoffee = this.sliderContainer.querySelector('.coffee-slider-description');
+      this.priceCoffee = this.sliderContainer.querySelector('.coffee-slider-price');
+      this.bulletsContainer = this.sliderContainer.querySelector('.coffee-slider-counter');
+      this.activeBullet;
+      this.products = [];
+    }
 
-  let products;
+  async init() {
+     
 
-  let sliderContainer = document.querySelector('.favorite-coffee-slider-container');
-  let arrowLeft = sliderContainer.querySelector('.arrow-left');
-  let arrowRight= sliderContainer.querySelector('.arrow-right');
-  let pictureCoffee = sliderContainer.querySelector('.coffee-slider-img-img');
-  let titleCoffee = sliderContainer.querySelector('.coffee-slider-title');
-  let descriptionCoffee = sliderContainer.querySelector('.coffee-slider-description');
-  let priceCoffee = sliderContainer.querySelector('.coffee-slider-price');
-  let bulletsContainer = sliderContainer.querySelector('.coffee-slider-counter');
-  let activeBullet;
+    
+    await this.initProducts();
+    }
 
-  async function initProducts() {
-    await getProducts();
-    showProduct(0);
+  
+
+  async initProducts() {
+    await this.getProducts();
+    this.showProduct(1);
     //addEventListener
   }
 
-  async function getProducts(){
-    data = 'src/assets/json/home-coffee.json';
+  async getProducts(){
+    let data = 'src/assets/json/home-coffee.json';
     let result = await fetch(data);
-     products = await result.json();
+    this.products = await result.json();
+    console.log("products= " + this.products);
+    console.log("product1 = " + this.products[0].title);
   }
 
-  function showProduct(index) {
+  showProduct(index) {
     if (index > 2 || index < 0)
       index = 0;
+    if (this.products[index]) {
+      console.log("saving title");
+      this.titleCoffee.innerHTML = this.products[index].title;
+      this.pictureCoffee.src = this.products[index].imgUrl;
+    }
 
   }
 
-  function createBullets() {
+  createBullets() {
     
   }
 }

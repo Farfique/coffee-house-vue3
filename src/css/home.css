@@ -1,5 +1,5 @@
 .hero {
-  background-image: url("../assets/img/hero-bgr.jpeg");
+  background-image: url("/src/assets/img/hero-bgr.jpeg");
   width: 100%;
   padding-bottom: 100px;
   padding-top: 100px;
