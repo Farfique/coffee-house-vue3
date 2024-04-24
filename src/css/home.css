@@ -64,6 +64,24 @@
   background-size: 24px 24px;
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.coffee-current-slide-frame {
+  width: 35vw;
+  max-width: 480px;
+  overflow: hidden;
+}
+
+.coffee-slides {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
 }
 
 .coffee-slider-content {
@@ -78,8 +96,12 @@
 }
 
 .coffee-slider-img-img{
-  width: 480px;
-  height: 480px;
+  width: 35vw;
+  max-width: 480px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
 }
 
 .coffee-slider-title{
@@ -120,6 +142,7 @@
   width: 40px;
   background-color: #C1B6AD;
   border-radius: 100px;
+  cursor: pointer;
 }
 
 .coffee-slider-active {

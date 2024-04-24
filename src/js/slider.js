@@ -1,6 +1,7 @@
 export default class Slider {
     constructor(){
       this.sliderContainer = document.querySelector('.favorite-coffee-slider-container');
+      this.coffeeSlides = this.sliderContainer.querySelector('.coffee-slides');
       this.arrowLeft = this.sliderContainer.querySelector('.arrow-left');
       this.arrowRight= this.sliderContainer.querySelector('.arrow-right');
       this.pictureCoffee = this.sliderContainer.querySelector('.coffee-slider-img-img');
@@ -20,6 +21,10 @@ export default class Slider {
         this.incrementIndex('RIGHT');
         this.updateProduct();
       });
+
+      window.addEventListener('resize', () => {
+        this.showProduct(this.index);
+      })
       
 
     }
@@ -34,6 +39,8 @@ export default class Slider {
 
   async initProducts() {
     await this.getProducts();
+    console.log("prampam");
+    this.createAllSlides();
     this.showProduct(this.index);
     //addEventListener
   }
@@ -44,10 +51,13 @@ export default class Slider {
     this.products = await result.json();
     console.log("products= " + this.products);
     console.log("product1 = " + this.products[0].title);
+    console.log("what happened?");
   }
 
   incrementIndex(direction) {
     let len = this.products.length;
+
+    console.log("index before increment: " + this.index);
 
     if (this.index == len - 1 && direction == "RIGHT") {
       this.index = 0;
@@ -61,6 +71,7 @@ export default class Slider {
     else {
       this.index--;
     }
+    console.log("index after increment: " + this.index);
   }
 
   updateProduct() {
@@ -72,13 +83,64 @@ export default class Slider {
     if (index > 2 || index < 0)
       index = 0;
     if (this.products[index]) {
-      console.log("saving title");
-      this.titleCoffee.innerHTML = this.products[index].title;
-      this.pictureCoffee.src = this.products[index].imgUrl;
-      this.descriptionCoffee.innerHTML = this.products[index].description;
-      this.priceCoffee.innerHTML = this.products[index].price;
+      let slideWidth = window.getComputedStyle(this.coffeeSlides.firstChild).getPropertyValue('width');
+      console.log('slideWidth = ', slideWidth);
+      console.log('type = ', typeof (slideWidth));
+    if (slideWidth.includes('px')) {
+        slideWidth = slideWidth.substring(0, slideWidth.length - 2);
+        console.log('slideWidth = ', slideWidth);
+        slideWidth = (+slideWidth);
+      } 
+      let gap = 20;
+      let newSlideWidth = slideWidth + gap;
+      console.log('newSlideWidth = ', newSlideWidth);
+      console.log('left = ', window.getComputedStyle(this.coffeeSlides).getPropertyValue('left'));
+      this.coffeeSlides.style.left = -1 * newSlideWidth * index + "px";
+      console.log('left = ', window.getComputedStyle(this.coffeeSlides).getPropertyValue('left'));
     }
 
+  }
+
+  createAllSlides() {
+
+    if (this.coffeeSlides.children.length > 0) {
+      let newCoffeeSlides = document.createElement('div');
+      newCoffeeSlides.classList.add('coffee-slides');
+      this.coffeeSlides.parentNode.replaceChild(newCoffeeSlides, this.coffeeSlides);
+      this.coffeeSlides = newCoffeeSlides;
+    }
+
+    for (let i = 0; i < this.products.length; i++){
+      let slide = document.createElement('div');
+      slide.classList.add('coffee-slider-content');
+
+      let imgContainer = document.createElement('div');
+      imgContainer.classList.add('coffee-slider-img');
+      let img = document.createElement('img');
+      img.classList.add('coffee-slider-img-img');
+      img.src = this.products[i].imgUrl;
+      img.alt = this.products[i].title;
+      imgContainer.appendChild(img);
+      slide.appendChild(imgContainer);
+
+      let title = document.createElement('h3');
+      title.classList.add('coffee-slider-title');
+      title.innerText = this.products[i].title;
+      slide.appendChild(title);
+
+      let description = document.createElement('p');
+      description.classList.add('coffee-slider-description');
+      description.innerText = this.products[i].description;
+      slide.appendChild(description);
+
+      let price = document.createElement('h3');
+      price.classList.add('coffee-slider-price');
+      price.innerText = this.products[i].price;
+      slide.appendChild(price);
+
+      this.coffeeSlides.appendChild(slide);
+    }
+    
   }
 
   createBullets() {
@@ -94,6 +156,11 @@ export default class Slider {
         this.activeBullet = item;
       }
       this.bulletsContainer.appendChild(item);
+
+      item.addEventListener('click', () => {
+        this.index = i;
+        this.updateProduct();
+       });
     }
   }
 
