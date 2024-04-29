@@ -13,6 +13,15 @@ export default class Slider {
       this.products = [];
       this.index = 0;
 
+      
+
+    }
+
+  async init() {  
+    await this.initProducts();
+    this.createBullets();
+
+    
       this.arrowLeft.addEventListener('click', () => {
         this.incrementIndex('LEFT');
         this.updateProduct();
@@ -25,13 +34,8 @@ export default class Slider {
       window.addEventListener('resize', () => {
         this.showProduct(this.index);
       })
-      
 
-    }
-
-  async init() {  
-    await this.initProducts();
-    this.createBullets();
+      this.addSwipeListener();
 
     }
 
@@ -54,16 +58,18 @@ export default class Slider {
     console.log("what happened?");
   }
 
-  incrementIndex(direction) {
+  incrementIndex(direction, forSwipe = false) {
     let len = this.products.length;
 
     console.log("index before increment: " + this.index);
 
     if (this.index == len - 1 && direction == "RIGHT") {
-      this.index = 0;
+      if (!forSwipe)
+        this.index = 0;
     }
     else if (this.index == 0 && direction == "LEFT") {
-      this.index = len - 1;
+      if (!forSwipe)
+        this.index = len - 1;
     }
     else if (direction == "RIGHT") {
       this.index++;
@@ -175,6 +181,33 @@ export default class Slider {
     newActiveItem.classList.add('coffee-slider-active');
     this.activeBullet = newActiveItem;
     
+  }
+
+  addSwipeListener() {
+    let touchstartX = 0
+    let touchendX = 0
+        
+
+    let checkDirection = () => {
+      if (touchendX < touchstartX) {
+        this.incrementIndex('RIGHT', true);
+      }
+      if (touchendX > touchstartX) {
+        this.incrementIndex('LEFT', true);
+      }
+    }
+
+     this.sliderContainer.addEventListener('touchstart', e => {
+       touchstartX = e.changedTouches[0].screenX
+       console.log('touchstart = ' + touchstartX);
+    })
+
+     this.sliderContainer.addEventListener('touchend', e => {
+       touchendX = e.changedTouches[0].screenX;
+       console.log('touchendX = ' + touchendX);
+       checkDirection();
+       this.updateProduct();
+    })
   }
 }
 

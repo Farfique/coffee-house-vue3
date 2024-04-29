@@ -311,22 +311,29 @@
       padding-top: 60px;
     }
   .hero-content {
-      width: 100%;
-      margin-left: 0px;
-      padding-left: 16px;
-      padding-right: 16px;
-    }
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .coffee-slider-main {
+    justify-content: center;
+  }
+  .coffee-current-slide-frame {
+    width: 70vw;
+  }
   .coffee-slider-back-btn,
   .coffee-slider-next-btn {
-      display: none;
-    }
+    display: none;
+  }
+
   .coffee-slider-content {
     width: 100%;
   }
-    .coffee-slider-img-img {
-      width: 100%;
-      height: auto;
-    }
+  .coffee-slider-img-img {
+    width: 70vw;
+    height: auto;
+  }
 
   .mobile-app-container {
     gap: 40px;
