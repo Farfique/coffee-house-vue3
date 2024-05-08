@@ -59,9 +59,10 @@ module.exports = {
   },
   target: ['web', 'es6'],
   plugins: [
-    //new MiniCssExtractPlugin({ filename: '[contenthash].css' }),
-      new MiniCssExtractPlugin({ filename: '[file].css' }),
-      new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new MiniCssExtractPlugin({ filename: '[contenthash].css' }),
+    //new MiniCssExtractPlugin({ filename: '[file].css' }),
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({filename: 'menu.html', template: './src/templates/menu.html' }),
     new CopyWebpackPlugin({
         patterns: [
             {
