@@ -3,11 +3,17 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   entry: './src/index.js',
   module: {
     rules: [
+    //Vue loader. Says to webpack that files with .vue extension need to be processed by the vue-loader plugin
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
         //dependency: { not: ['url'] },
@@ -31,10 +37,20 @@ module.exports = {
         test: /\.(woff(2)?|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
-      {
+      /*{
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
+        use: [MiniCssExtractPlugin.loader, 'vue-style-loader', 'css-loader'], //to check it!
+      },*/
+      // SASS and CSS files from Vue Single File Components:
+    {
+        test: /\.vue\.(s?[ac]ss)$/,
+        use: ['vue-style-loader', 'css-loader']
+    },
+    // SASS and CSS files (standalone):
+    {
+        test: /(?<!\.vue)\.(s?[ac]ss)$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+    },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -60,8 +76,10 @@ module.exports = {
   target: ['web', 'es6'],
   plugins: [
     new MiniCssExtractPlugin({ filename: '[contenthash].css' }),
+    new VueLoaderPlugin(),
     //new MiniCssExtractPlugin({ filename: '[file].css' }),
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({filename: 'index.html', template: './src/index.html'}),
+    new HtmlWebpackPlugin({filename: 'home.html', template: './src/templates/home.html' }),
     new HtmlWebpackPlugin({filename: 'menu.html', template: './src/templates/menu.html' }),
     new CopyWebpackPlugin({
         patterns: [
