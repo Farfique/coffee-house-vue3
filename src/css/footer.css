@@ -31,6 +31,11 @@
   border-radius: 100%;
 }
 
+.socials-button:hover {
+  border: 1px solid #B0907A;
+  cursor: pointer;
+}
+
 .social-svg {
   width: 24px;
   height: 24px;
@@ -41,6 +46,10 @@
 
 .social-svg-path {
   stroke: #C1B6AD;
+}
+
+.socials-button:hover .social-svg-path {
+  stroke: #B0907A;
 }
 
 .contacts {

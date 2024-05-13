@@ -25,6 +25,13 @@
   gap: 8px;
   border-radius: 100px;
   text-decoration: none;
+  background-color: #E1D4C9;
+}
+
+.hero-main-link:hover {
+  background-color: #B0907A;
+  transition: 0.2s;
+  color: #32312e;
 }
 
 .hero-text-p {
@@ -234,6 +241,21 @@
   border: 1px solid #665F55;
   border-radius: 100px;
 }
+
+.store-button:hover {
+  border: 1px solid #B0907A;
+  cursor: pointer;
+}
+
+.store-button:hover .apple-store-icon-picture {
+  fill: #B0907A;
+}
+
+.store-button:hover .store-button-text {
+  color: #B0907A;
+}
+
+
 
 .store-icon {
   width: 36px;

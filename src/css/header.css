@@ -9,6 +9,7 @@ header {
   background-image: url("../assets/svg/logo.svg");
   width: 100px;
   height: 60px;
+  z-index: 5;
 }
 
 .header-menu-icon {
@@ -28,6 +29,7 @@ header {
 .navigation {
   display: flex;
   align-items: center;
+  z-index: 4;
 }
 
 .nav-container-ul {
@@ -39,6 +41,10 @@ header {
   padding-inline-start: 0px;
   margin-block-start: 0px;
   margin-block-end: 0px;
+}
+
+.menu-item-link {
+  text-decoration: none;
 }
 
 .header-menu-container,
