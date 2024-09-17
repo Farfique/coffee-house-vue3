@@ -1,13 +1,20 @@
 <template>
-  <h1>Minimal Vue Webpack</h1>
+  <div class="all-content">
+    <Navigation></Navigation>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
 
 import { defineComponent } from 'vue';
+import Footer from './templates/components/Footer.vue';
+import Navigation from './templates/components/Navigation.vue';
+
 
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+  components: { Footer, Navigation }
 });
 
 </script>
