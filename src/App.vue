@@ -1,6 +1,7 @@
 <template>
   <div class="all-content">
     <Navigation></Navigation>
+    <RouterView></RouterView>
     <Footer></Footer>
   </div>
 </template>
@@ -10,6 +11,7 @@
 import { defineComponent } from 'vue';
 import Footer from './templates/components/Footer.vue';
 import Navigation from './templates/components/Navigation.vue';
+
 
 
 export default defineComponent({

@@ -9,11 +9,7 @@ module.exports = {
   entry: './src/index.js',
   module: {
     rules: [
-    //Vue loader. Says to webpack that files with .vue extension need to be processed by the vue-loader plugin
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
+
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
         //dependency: { not: ['url'] },
@@ -36,6 +32,11 @@ module.exports = {
       {
         test: /\.(woff(2)?|eot|ttf|otf)$/i,
         type: 'asset/resource',
+      },
+          //Vue loader. Says to webpack that files with .vue extension need to be processed by the vue-loader plugin
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
       /*{
         test: /\.css$/i,
