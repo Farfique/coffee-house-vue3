@@ -14,7 +14,7 @@
             beverage.
           </p>
         </div>
-        <a href="/menu.html" class="hero-main-link link-text text-dark">Menu</a>
+        <RouterLink to="/menu" class="hero-main-link link-text text-dark">Menu</RouterLink>
       </div>
     </section>
     <section id="favorite-coffee" class="favorite-coffee">

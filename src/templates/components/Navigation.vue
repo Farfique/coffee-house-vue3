@@ -1,8 +1,8 @@
 <template>
  <header class="main-header">
-  <a class="main-logo-link" href="/">
+  <RouterLink class="main-logo-link" to="/">
    <div class="logo"></div>
-  </a>
+  </RouterLink>
   <input id="menu__toggle" type="checkbox" />
   <label id="menu-btn" for="menu__toggle">
   </label>
