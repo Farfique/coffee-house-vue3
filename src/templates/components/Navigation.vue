@@ -18,7 +18,9 @@
   </nav>
   <div class="header-menu-container">
    <div class="header-menu-container-inside">
-    <div class="header-menu link-text"><a class="menu-item-link text-dark" href="/menu.html">Menu</a></div>
+    <div class="header-menu link-text">
+     <RouterLink class="menu-item-link text-dark" to="/menu">Menu</RouterLink>
+    </div>
     <div class="header-menu-icon"></div>
    </div>
 

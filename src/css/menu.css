@@ -21,6 +21,8 @@
 }
 
 .menu-selection-link {
+  display: block;
+  position: relative;
     padding: 8px 16px 8px 8px;
     border-radius: 100px;
     border: 1px solid #C1B6AD;
@@ -28,6 +30,12 @@
     justify-content: flex-start;
     gap: 8px;
     align-items: center;
+}
+
+.menu-selection-link input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .coffee-selection-link {
@@ -42,12 +50,17 @@
 
 }
 
-.selected {
+.menu-selection-link:has(input:checked) {
   background-color: #665F55;
 }
 
-.selected .menu-icon {
+.menu-selection-link input:checked ~ .menu-icon {
   background-color: #E1D4C9;
+}
+
+.menu-selection-link:hover {
+  background-color: #d3c9c1;
+  cursor: pointer;
 }
 
 .menu-icon {
