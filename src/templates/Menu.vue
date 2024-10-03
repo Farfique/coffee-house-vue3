@@ -10,7 +10,7 @@
     </div>
     <ul class="cards-container" v-if="products">
       <ProductCard v-for="product in filteredProducts" :name="product.name" :description="product.description"
-        :category="product.category" :price="product.price"></ProductCard>
+        :category="product.category" :price="product.price" :image="product.img"></ProductCard>
     </ul>
   </main>
 </template>
