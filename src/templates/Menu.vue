@@ -11,24 +11,43 @@
     </div>
     <ul class="cards-container" v-if="products">
       <ProductCard v-for="product in filteredProducts" :name="product.name" :description="product.description"
-        :category="product.category" :price="product.price" :image="product.img"></ProductCard>
+        :category="product.category" :price="product.price" :image="product.img" @click="openModal(event, product)">
+      </ProductCard>
     </ul>
+    <ProductModal v-if="isModalVisible && !!openedProduct" :title="openedProduct.name" :imgSrc="openedProduct.img"
+      :description="openedProduct.description" :sizes="openedProduct.sizes" :additives="openedProduct.additives"
+      :price="openedProduct.price" @close-modal-event="closeModal" />
   </main>
 </template>
 <script setup>
 import { ref, computed } from 'vue'
 import ProductCard from '../templates/components/ProductCard.vue'
+import ProductModal from './components/ProductModal.vue';
 
+const isModalVisible = ref(false);
 const groups = ["coffee", "tea", "dessert"];
 const groupSelected = ref("coffee");
 let products = ref([]);
+const openedProduct = ref(null);
 let filteredProducts = computed(() => {
   return products.value.filter((item) => item.category == groupSelected.value)
 })
+
 
 //Get products
 fetch('../src/assets/json/products.json').then((data) => data.json()).then((result) => {
   products.value = result;
 });
+
+const openModal = (e, product) => {
+  openedProduct.value = product;
+  isModalVisible.value = true;
+}
+
+const closeModal = () => {
+  console.log("catched close Modal event on Menu page");
+  isModalVisible.value = false;
+  openedProduct.value = null;
+}
 
 </script>

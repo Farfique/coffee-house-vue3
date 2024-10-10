@@ -75,7 +75,7 @@
           <p class="mobile-app-content-text text-dark">Download the Resource app today and experience the comfort of
             ordering your favorite coffee from wherever you are</p>
           <div class="mobile-app-content-buttons">
-            <a class="store-button apple-store-button">
+            <a class="transparent-button store-button apple-store-button">
               <!-- <div class="store-icon apple-store-icon"><img class="apple-store-icon-picture" alt="app store icon"
                     src="../src/assets/svg/applestore-icon.svg"></div> -->
               <div class="store-icon apple-store-icon">
@@ -99,7 +99,7 @@
                 <div class="store-button-text store-button-store-title link-text">App Store</div>
               </div>
             </a>
-            <a class="store-button google-play-button">
+            <a class="transparent-button store-button google-play-button">
               <!-- <div class="store-icon play-store-icon"><img class="apple-store-icon-picture" alt="app store icon"
                     src="../src/assets/svg/playstore-icon.svg"></div> -->
               <div class="store-icon play-store-icon">

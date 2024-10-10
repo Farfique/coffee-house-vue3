@@ -14,7 +14,7 @@
 }
 
 .product-card-picture {
- width: 100%;
+ width: 310px;
  height: 310px;
  object-fit: contain;
  object-position: top left;
