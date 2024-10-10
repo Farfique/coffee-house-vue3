@@ -36,7 +36,7 @@
  display: flex;
  flex-direction: column;
  justify-content: flex-start;
- gap: 20px;
+ gap: 10px;
 
 }
 
@@ -52,8 +52,16 @@
 
 }
 
-.product-modal-total {
+.product-modal-add-container {
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ gap: 8px;
+}
 
+.product-modal-total {
+  display: flex;
+  justify-content: space-between;
 }
 
 .product-modal-disclaimer {

@@ -60,11 +60,26 @@ ul {
   padding-right: 20px;
   border: 1px solid #665F55;
   border-radius: 100px;
+  background-color: rgba(0,0,0,0);
 }
 
 .transparent-button:hover {
   border: 1px solid #B0907A;
   cursor: pointer;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.no-margin {
+  margin: 0;
 }
 
 @media (max-width: 767px) {

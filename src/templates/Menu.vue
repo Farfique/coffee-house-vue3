@@ -2,7 +2,7 @@
   <main class="menu-container">
     <h2 class="menu-container-title text-dark">Behind each of our cups hides an <span class="text-accent">amazing
         surprise</span></h2>
-    <div class="menu-selection">
+    <div class="menu-selection flex-center">
       <label v-for="group in groups" class="menu-selection-link link-text"
         :class="group + '-selection-link ' + ((group == groupSelected) ? 'text-light' : 'text-dark')">
         <input type="radio" name="product-type" :value="group" :checked="group == 'coffee'" v-model="groupSelected" />

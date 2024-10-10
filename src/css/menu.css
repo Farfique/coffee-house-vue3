@@ -14,7 +14,6 @@
 
 .menu-selection {
   display: flex;
-  justify-content: center;
   gap: 16px;
   list-style-type: none;
   margin: 0;
@@ -71,6 +70,8 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 50%;
+      text-align: center;
+        line-height: 175%;
 }
 
 .coffee-menu-icon {
