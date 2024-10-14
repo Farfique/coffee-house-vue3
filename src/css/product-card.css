@@ -16,9 +16,19 @@
 .product-card-picture {
  width: 310px;
  height: 310px;
- object-fit: contain;
- object-position: top left;
+ object-fit: none;
+ object-position: center;
  border-radius: 40px;
+}
+
+.product-card:hover {
+  cursor: pointer;
+}
+
+.product-card:hover .product-card-picture {
+  object-fit: contain;
+  transition: 2s;
+
 }
 
 .product-card-content {
