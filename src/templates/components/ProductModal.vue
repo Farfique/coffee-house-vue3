@@ -1,5 +1,5 @@
 <template>
-  <div class="product-modal" ref="product-modal">
+  <div class="product-modal" ref="product-modal" @click.self="closeModal">
     <div class="product-modal-container background-light">
       <ProductCardImage :image="imgSrc" />
       <div class="product-modal-info">
@@ -12,10 +12,9 @@
           <div class="product-modal-size-menu">
             <div class="menu-selection flex-start">
               <label v-for="(sizeObj, sizeName, index) in sizes" class="menu-selection-link link-text"
-                :class="((sizeName == sizeSelected) ? 'text-light' : 'text-dark')">
-                <input type="radio" name="product-type" :value="sizeName" :checked="sizeName == 's'"
-                  v-model="sizeSelected" />
-                <span class="menu-icon text-dark" :class="group + '-menu-icon'">{{ sizeName.toUpperCase() }}</span>{{
+                :class="((sizeName == sizeSelected) ? 'text-light container' : 'text-dark')">
+                <input type="radio" name="size" :value="sizeName" :checked="sizeName == 's'" v-model="sizeSelected" />
+                <span class="menu-icon text-dark">{{ sizeName.toUpperCase() }}</span>{{
                   sizeObj.size
                 }}
               </label>
@@ -27,9 +26,9 @@
           <div class="product-modal-additives-menu">
             <div class="menu-selection flex-start">
               <label v-for="(additive, index) in additives" class="menu-selection-link link-text">
-                <input type="checkbox" name="additive-type" :value="additive.name" checked="false"
-                  v-model="additiveSelected" />
-                <span class="menu-icon">{{ index }}</span>{{ additive.name }}
+                <input type="checkbox" name="additive-type" :value="additive" checked="false"
+                  v-model="additivesSelected" />
+                <span class="menu-icon">{{ index + 1 }}</span>{{ additive.name }}
               </label>
             </div>
           </div>
@@ -66,38 +65,36 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue';
-import { useTemplateRef, onMounted } from 'vue';
+
+import { ref, computed, useTemplateRef } from 'vue';
 import ProductCardImage from './ProductCardImage.vue';
 
+const props = defineProps([
+  'title',
+  'imgSrc',
+  'description',
+  'sizes',
+  'additives',
+  'price'
+]);
 
-const props = defineProps(['title', 'imgSrc', 'description', 'sizes', 'additives', 'price']);
-//const emit = defineEmits(['close-modal-event']);
-
-const totalPrice = ref(props.price);
-const additiveSelected = ref([]);
+const additivesSelected = ref([]);
 const sizeSelected = ref('s');
 
 const buttonModal = useTemplateRef('button-modal');
-const productModal = useTemplateRef('product-modal');
 const closeModalEvent = new Event('close-modal-event', { bubbles: true });
 
+//computed properties
+const additivesPrice = computed(() => additivesSelected.value.reduce((acc, current) => parseFloat(acc) + parseFloat(current["add-price"]), 0)) //Number
 
-onMounted(() => {
+const sizePrice = computed(() => parseFloat(props.sizes[sizeSelected.value]['add-price'])) //Number
 
-  productModal.value.addEventListener('close-modal-event', () => {
-    console.log('event lister!!!');
-  })
-})
+const totalPrice = computed(() => (sizePrice.value + additivesPrice.value + parseFloat(props.price)).toFixed(2)) //String
 
-const reportClose = () => {
-  console.log("product modal: close reported");
-}
+//methods
+
 const closeModal = () => {
-  console.log("closing");
-  console.log("element = " + buttonModal.value);
   buttonModal.value.dispatchEvent(closeModalEvent);
 }
-
 
 </script>

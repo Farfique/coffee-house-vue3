@@ -5,7 +5,8 @@
     <div class="menu-selection flex-center">
       <label v-for="group in groups" class="menu-selection-link link-text"
         :class="group + '-selection-link ' + ((group == groupSelected) ? 'text-light' : 'text-dark')">
-        <input type="radio" name="product-type" :value="group" :checked="group == 'coffee'" v-model="groupSelected" />
+        <input type="radio" name="product-type" :value="group" :checked="group == groupSelected"
+          v-model="groupSelected" />
         <span class="menu-icon" :class="group + '-menu-icon'"></span>{{ group }}
       </label>
     </div>
