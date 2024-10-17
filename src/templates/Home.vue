@@ -19,34 +19,7 @@
     </section>
     <section id="favorite-coffee" class="favorite-coffee">
       <h2 class="favorite-coffee-header">Choose your <span class="text-accent">favorite</span> coffee</h2>
-      <div class="favorite-coffee-slider-container">
-        <div class="coffee-slider-main">
-          <div class="coffee-slider-back-btn arrow-left"></div>
-          <div class="coffee-current-slide-frame">
-            <div class="coffee-slides">
-              <div class="coffee-slider-content">
-                <div class="coffee-slider-img"><img class="coffee-slider-img-img"
-                    src="../assets/img/coffees/frappuccino.png" alt="Frappucciono"></div>
-                <h3 class="coffee-slider-title">sdfdsfsdfs</h3>
-                <p class="coffee-slider-description">This new drink takes an espresso and mixes it with brown sugar
-                  and
-                  cinnamon before being topped with
-                  oat milk.</p>
-                <h3 class="coffee-slider-price">$5.50</h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="coffee-slider-next-btn arrow-right"></div>
-        </div>
-        <div class="coffee-slider-bar">
-          <ul class="coffee-slider-counter">
-            <li class="coffee-slider-item coffee-slider-active"></li>
-            <li class="coffee-slider-item"></li>
-            <li class="coffee-slider-item"></li>
-          </ul>
-        </div>
-      </div>
+      <Slider />
     </section>
     <section id="about" class="about">
       <h2 class="about-title text-dark">Resource is <span class="text-accent">the perfect and cozy place</span> where
@@ -136,14 +109,9 @@
   </main>
 </template>
 
-<script>
+<script setup>
 
-import { defineComponent } from 'vue';
-
-
-export default defineComponent({
-  name: 'Home'
-});
+import Slider from './components/Slider.vue'
 
 </script>
 
