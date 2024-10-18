@@ -23,7 +23,8 @@
  </div>
 </template>
 <script setup>
-import { ref, useTemplateRef, computed } from 'vue';
+import { ref, useTemplateRef, computed, onMounted, onBeforeMount } from 'vue';
+import { addSwipeListener } from '../../js/swipe';
 const coffees = ref([]);
 const activeIndex = ref(0);
 const slides = useTemplateRef('slide');
@@ -32,11 +33,20 @@ const slidesRail = useTemplateRef('slides-rail');
 //computed
 const coffeesCount = computed(() => coffees.value.length);
 
+onBeforeMount(() => {
+  //get coffees
+  fetch('../src/assets/json/home-coffee.json').then((data) => data.json()).then((result) => {
+  coffees.value = result;
+  });
+})
 
-//get coffees
-fetch('../src/assets/json/home-coffee.json').then((data) => data.json()).then((result) => {
- coffees.value = result;
-});
+onMounted(() => {
+  addSwipeListener(slidesRail.value, showNextOrPrevious);
+  window.addEventListener('resize', () => {
+        selectCoffeeByIndex(activeIndex.value);
+      })
+})
+
 
 //methods
 const selectCoffeeByIndex = (index) => {
@@ -79,5 +89,18 @@ const showPrevious = () => {
   newIndex = coffeesCount.value - 1;
  }
  selectCoffeeByIndex(newIndex);
+}
+
+const showNextOrPrevious = (direction) => {
+  console.log("showNextOrPrevious is called with direction = " + direction);
+  if (direction != 'next' && direction != 'previous' && direction != 'none') {
+    direction = 'previous';
+  }
+  if (direction == 'previous') {
+    showPrevious();
+  }
+  else if (direction == 'next'){
+    showNext();
+  }
 }
 </script>
