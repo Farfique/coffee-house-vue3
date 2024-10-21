@@ -16,7 +16,9 @@ export const router = createRouter({
     if (to.hash) {
       return {
         el: to.hash,
-        behavior: 'smooth'
+        behavior: 'smooth',
+        top: 80,
+        offset: { x: 0, y: -80 }
       };
     }
     return { left: 0, top: 0 };  // Go to the top of the page if no hash

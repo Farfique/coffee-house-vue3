@@ -24,6 +24,11 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: sticky;
+  left: 0;
+  top: 0;
+  background-color: #E1D4C9;
+  z-index: 4;
 }
 
 .navigation {
