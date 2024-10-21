@@ -9,10 +9,10 @@
   <nav class="navigation">
    <div class="nav-container">
     <ul class="nav-container-ul link-text">
-     <li class="menu-item"><a class="menu-item-link text-dark" href="#favorite-coffee">Favorite coffee</a></li>
-     <li class="menu-item"><a class="menu-item-link text-dark" href="#about">About</a></li>
-     <li class="menu-item"><a class="menu-item-link text-dark" href="#mobile-app">Mobile app</a></li>
-     <li class="menu-item"><a class="menu-item-link text-dark" href="#contacts">Contact us</a></li>
+     <li class="menu-item"><RouterLink class="menu-item-link text-dark" :to="{path: '/', hash: '#favorite-coffee'}">Favorite coffee</RouterLink></li>
+     <li class="menu-item"><RouterLink class="menu-item-link text-dark" :to="{path: '/', hash: '#about'}">About</RouterLink></li>
+     <li class="menu-item"><RouterLink class="menu-item-link text-dark" :to="{path: '/', hash: '#mobile-app'}">Mobile app</RouterLink></li>
+     <li class="menu-item"><RouterLink class="menu-item-link text-dark" :to="{path: '/', hash: '#contacts'}">Contact us</RouterLink></li>
     </ul>
    </div>
   </nav>
