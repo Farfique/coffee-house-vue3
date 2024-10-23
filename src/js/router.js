@@ -10,7 +10,8 @@ const routes = [
 ]
 
 export const router = createRouter({
- history: createWebHistory(),
+  history: createWebHistory(),
+  base: '/coffee-house-vue3/',
  routes,
  scrollBehavior (to, from, savedPosition) {
     if (to.hash) {
