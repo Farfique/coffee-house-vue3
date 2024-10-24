@@ -78,17 +78,18 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({ filename: '[contenthash].css' }),
     new VueLoaderPlugin(),
-    //new MiniCssExtractPlugin({ filename: '[file].css' }),
-    new HtmlWebpackPlugin({filename: 'index.html', template: './src/index.html'}),
-    new HtmlWebpackPlugin({filename: 'home.html', template: './src/templates/home.html' }),
-    new HtmlWebpackPlugin({filename: 'menu.html', template: './src/templates/menu.html' }),
+    new HtmlWebpackPlugin({ filename: 'index.html', template: './src/index.html' }),
+    new HtmlWebpackPlugin({filename: '404.html', template: './src/index.html'}),
     new CopyWebpackPlugin({
         patterns: [
             {
-            // context: path.resolve(__dirname, 'src'),
                context: path.resolve(__dirname),
                 from: 'src/assets/**',
                 to: path.resolve(__dirname, 'dist')        
+            },
+              {
+              from: path.resolve(__dirname, 'public/_redirects'),  
+              to: path.resolve(__dirname, 'dist') 
             }
         ]}),
       new CleanWebpackPlugin(),

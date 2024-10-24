@@ -35,7 +35,7 @@ const coffeesCount = computed(() => coffees.value.length);
 
 onBeforeMount(() => {
   //get coffees
-  fetch('../src/assets/json/home-coffee.json').then((data) => data.json()).then((result) => {
+  fetch('/src/assets/json/home-coffee.json').then((data) => data.json()).then((result) => {
   coffees.value = result;
   });
 })
